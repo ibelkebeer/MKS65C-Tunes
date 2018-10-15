@@ -27,7 +27,7 @@ struct node* insert_ordered(struct node* cur, char name[100], char artist[100]){
   strcpy(new -> artist, artist);
   strcpy(new -> name, name);
   struct node* first = cur;
-  struct node* prev;
+  struct node* prev = NULL;
   while(cur -> next && strcmp(artist, cur -> artist) > 0){
     prev = cur;
     cur = cur -> next;
