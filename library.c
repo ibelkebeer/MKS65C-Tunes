@@ -8,7 +8,7 @@ int indexof(char name[]){
   if(name[0] >= 65 && name[0] <= 90){
     return name[0] - 65;
   }
-  return 26
+  return 26;
 }
 
 void print_library(struct library* lib){
