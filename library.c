@@ -18,7 +18,7 @@ void print_library(struct library* lib){
   }
 }
 
-void print_artist(struct library* lib, char artist[]){
+void print_artist_lib(struct library* lib, char artist[]){
   print_artist(lib -> table[indexof(artist)], artist);
 }
 
@@ -29,20 +29,20 @@ void clear_library(struct library* lib){
   }
 }
 
-void insert_song(struct library* lib, char name[], char artist[]){
+void insert_song_lib(struct library* lib, char name[], char artist[]){
   int i = indexof(artist);
   lib -> table[i] = insert_ordered(lib -> table[i], name, artist);
 }
 
-void del(struct library* lib, char name[], char artist[]){
+void del_lib(struct library* lib, char name[], char artist[]){
   int i = indexof(artist);
   lib -> table[i] = del(lib -> table[i], name, artist);
 }
 
-struct node* find_song(struct library* lib, char name[], char artist[]){
+struct node* find_song_lib(struct library* lib, char name[], char artist[]){
   return find_song(lib -> table[indexof(artist)], name, artist);
 }
 
-struct node* find_artist(struct library* lib, char artist[]){
+struct node* find_artist_lib(struct library* lib, char artist[]){
   return find_song(lib -> table[indexof(artist)], artist);
 }
