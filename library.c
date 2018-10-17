@@ -15,6 +15,7 @@ int indexof(char name[]){
 void print_library(struct library* lib){
   int i;
   for(i = 0; i < 27; i++){
+    printf("%d\n", i);
     print_list(lib -> table[i]);
   }
 }
