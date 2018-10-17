@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "library.h"
 #include "linkedlist.c"
+#include "library.h"
 
-int indexof(char[] name){
+int indexof(char name[]){
   if(name[0] >= 65 && name[0] <= 90){
     return name[0] - 65;
   }
