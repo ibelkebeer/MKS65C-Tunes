@@ -1,3 +1,6 @@
+#ifndef list
+#define list
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,7 +11,6 @@ void print_list(struct node* cur){
     printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
     cur = cur -> next;
   }
-  printf("\n");
 }
 
 void print_node(struct node* cur){
@@ -25,7 +27,6 @@ void print_artist(struct node* cur, char artist[]){
 
 struct node* insert_ordered(struct node* cur, char name[], char artist[]){
   struct node* new = calloc(1, sizeof(struct node));
-  free(new);
   strcpy(new -> artist, artist);
   strcpy(new -> name, name);
   struct node* first = cur;
@@ -83,3 +84,5 @@ struct node* del(struct node* cur, char name[], char artist[]){
   }
   return cur -> next;
 }
+
+#endif

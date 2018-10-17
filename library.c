@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
-#include "linkedlist.c"
 #include "library.h"
+#include "linkedlist.c"
 
 int indexof(char name[]){
-  if(name[0] >= 65 && name[0] <= 90){
-    return name[0] - 65;
+  if(name[0] >= 97 && name[0] <= 122){
+    return name[0] - 97;
   }
   return 26;
 }
