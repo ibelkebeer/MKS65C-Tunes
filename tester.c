@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include "linkedlist.c"
+#include "library.c"
 
 int main(){
-  struct node* first = calloc(1, sizeof(struct node));
-  free(first);
-  strcpy(first -> name, "Hello");
-  strcpy(first -> artist, "World");
-  print_list(first);
-  print_list(insert_ordered(first, "BYOB", "System of a Down"));
+  struct library* lib = calloc(1, sizeof(struct library));
+  free(lib);
+  char name[] = "Baby Shark";
+  char artist[] = "god";
+  insert_song(lib, name, artist);
+  print_library(lib);
   return 0;
 }
