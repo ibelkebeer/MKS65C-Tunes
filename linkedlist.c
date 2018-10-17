@@ -8,13 +8,14 @@ void print_list(struct node* cur){
     printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
     cur = cur -> next;
   }
+  printf("\n");
 }
 
 void print_node(struct node* cur){
   printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
 }
 
-void print_artist(struct node* cur, char[100] artist){
+void print_artist(struct node* cur, char artist[]){
   cur = find_artist(cur, artist);
   while(strcmp(cur -> artist, artist) == 0){
     printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
@@ -22,16 +23,7 @@ void print_artist(struct node* cur, char[100] artist){
   }
 }
 
-struct node* insert_front(struct node* cur, char name[100], char artist[100]){
-  struct node* first = calloc(1, sizeof(struct node));
-  free(first);
-  strcpy(first -> name, name);
-  strcpy(first -> artist, artist);
-  first -> next = cur;
-  return first;
-}
-
-struct node* insert_ordered(struct node* cur, char name[100], char artist[100]){
+struct node* insert_ordered(struct node* cur, char name[], char artist[]){
   struct node* new = calloc(1, sizeof(struct node));
   free(new);
   strcpy(new -> artist, artist);
@@ -63,24 +55,24 @@ struct node* free_list(struct node* cur){
   return first;
 }
 
-struct node* find_song(struct node* cur, char[100] name, char[100] artist){
-  while(cur -> next && (!strcmp(first -> name, name) == 0 || !strcmp(first -> artist, artist) == 0)){
+struct node* find_song(struct node* cur, char name[], char artist[]){
+  while(cur -> next && (!(strcmp(cur -> name, name) == 0) || !(strcmp(cur -> artist, artist) == 0))){
     cur = cur -> next;
   }
   return cur;
 }
 
-struct node* find_artist(struct node* cur, char[100] artist){
-  while(cur -> next && !strcmp(first -> artist, artist) == 0){
+struct node* find_artist(struct node* cur, char artist[]){
+  while(cur -> next && !(strcmp(cur -> artist, artist) == 0)){
     cur = cur -> next;
   }
   return cur;
 }
 
-struct node* delete(struct node* cur, char[100] name, char[100] artist){
+struct node* del(struct node* cur, char name[], char artist[]){
   struct node* first = cur;
   struct node* prev = NULL;
-  while(cur -> next && (!strcmp(first -> name, name) == 0 || !strcmp(first -> artist, artist) == 0)){
+  while(cur -> next && (!(strcmp(first -> name, name) == 0) || !(strcmp(first -> artist, artist) == 0))){
     prev = cur;
     cur = cur -> next;
   }
