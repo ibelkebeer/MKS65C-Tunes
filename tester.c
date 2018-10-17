@@ -6,7 +6,7 @@ int main(){
   free(lib);
   char name[] = "Baby Shark";
   char artist[] = "god";
-  insert_song(lib, name, artist);
+  insert_song_lib(lib, name, artist);
   print_library(lib);
   return 0;
 }

@@ -44,5 +44,5 @@ struct node* find_song_lib(struct library* lib, char name[], char artist[]){
 }
 
 struct node* find_artist_lib(struct library* lib, char artist[]){
-  return find_song(lib -> table[indexof(artist)], artist);
+  return find_artist(lib -> table[indexof(artist)], artist);
 }
