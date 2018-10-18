@@ -14,14 +14,22 @@ void print_list(struct node* cur){
 }
 
 void print_node(struct node* cur){
-  printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
+  if(cur -> next){
+    printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
+  }else{
+    printf("Node not found\n");
+  }
 }
 
 void print_artist(struct node* cur, char artist[]){
   cur = find_artist(cur, artist);
-  while(strcmp(cur -> artist, artist) == 0){
-    printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
-    cur = cur -> next;
+  if(cur -> next){
+    while(strcmp(cur -> artist, artist) == 0){
+      printf("Name: %s, Artist: %s\n", cur -> name, cur -> artist);
+      cur = cur -> next;
+    }
+  }else{
+    printf("Artist not found\n");
   }
 }
 

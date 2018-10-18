@@ -9,11 +9,38 @@ int main(){
   free(lib);
   int i;
   for(int i = 0; i < 27; i ++){
-    lib -> table[i] = calloc(1, sizeof(struct node*));
+    lib -> table[i] = calloc(1, sizeof(struct node));
   }
-  char name[] = "Baby Shark";
-  char artist[] = "god";
+  char name[256] = "Faded";
+  char artist[256] = "Allan Walker";
   insert_song_lib(lib, name, artist);
+  strcpy(name,"Here");
+  strcpy(artist,"Allesia Claire");
+  insert_song_lib(lib, name, artist);
+  strcpy(name,"Cigaro");
+  strcpy(artist,"System of a Down");
+  insert_song_lib(lib, name, artist);
+  strcpy(name,"Los Angeles");
+  strcpy(artist,"Blink 182");
+  insert_song_lib(lib, name, artist);
+  strcpy(name,"BYOB");
+  strcpy(artist,"System of a Down");
+  insert_song_lib(lib, name, artist);
+  printf("print_list:\n");
   print_library(lib);
+  printf("\nfind_node(BYOB, System of a Down):\n");
+  find_song_lib(lib, name, artist);
+  printf("\nfind_node(Symphony, Clean Bandit):\n");
+  strcpy(name, "Symphony");
+  strcpy(artist, "Clean Bandit");
+  find_song_lib(lib, name, artist);
+  printf("\nfind artist(System of a Down): \n");
+  strcpy(artist, "System of a Down");
+  find_artist_lib(lib, artist);
+  printf("\nfind_artist(Clean Bandit):\n");
+  strcpy(artist, "Clean Bandit");
+  find_artist_lib(lib, artist);
+  printf("\nshuffle:\n");
+  
   return 0;
 }
