@@ -6,8 +6,8 @@
 #include "linkedlist.c"
 
 int indexof(char name[]){
-  if(name[0] >= 97 && name[0] <= 122){
-    return name[0] - 97;
+  if(name[0] >= 65 && name[0] <= 90){
+    return name[0] - 65;
   }
   return 26;
 }
