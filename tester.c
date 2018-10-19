@@ -70,7 +70,7 @@ int main(){
   strcpy(name,"BYOB");
   strcpy(artist,"System of a Down");
   insert_song_lib(lib, name, artist);
-  printf("print_list:\n");
+  printf("\nprint_list after adding:\n");
   print_library(lib);
   printf("\nfind_node(BYOB, System of a Down):\n");
   find_song_lib(lib, name, artist);
