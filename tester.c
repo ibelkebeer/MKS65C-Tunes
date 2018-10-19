@@ -52,5 +52,8 @@ int main(){
   strcpy(artist,"Alessia Cara");
   del_lib(lib, name, artist);
   print_library(lib);
+  clear_library(lib);
+  printf("\nLibrary after clear:\n");
+  print_library(lib);
   return 0;
 }

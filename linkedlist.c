@@ -59,9 +59,8 @@ struct node* free_list(struct node* cur){
   if(cur -> next){
     free_list(cur -> next);
   }
-  struct node* first = cur;
   free(cur);
-  return first;
+  return calloc(1, sizeof(struct node));
 }
 
 struct node* find_song(struct node* cur, char name[], char artist[]){
