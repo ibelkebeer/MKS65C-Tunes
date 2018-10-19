@@ -18,7 +18,7 @@ int main(){
   char artist[256] = "Allan Walker";
   insert_song_lib(lib, name, artist);
   strcpy(name,"Here");
-  strcpy(artist,"Allesia Claire");
+  strcpy(artist,"Alessia Cara");
   insert_song_lib(lib, name, artist);
   strcpy(name,"Cigaro");
   strcpy(artist,"System of a Down");
@@ -47,9 +47,9 @@ int main(){
   shuffle(lib);
   shuffle(lib);
   shuffle(lib);
-  printf("\ndelete(Here, Allesia Claire):\n");
+  printf("\ndelete(Here, Alessia Cara):\n");
   strcpy(name,"Here");
-  strcpy(artist,"Allesia Claire");
+  strcpy(artist,"Alessia Cara");
   del_lib(lib, name, artist);
   print_library(lib);
   return 0;
