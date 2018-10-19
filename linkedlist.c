@@ -81,7 +81,7 @@ struct node* find_artist(struct node* cur, char artist[]){
 struct node* del(struct node* cur, char name[], char artist[]){
   struct node* first = cur;
   struct node* prev = NULL;
-  while(cur -> next && (!(strcmp(first -> name, name) == 0) || !(strcmp(first -> artist, artist) == 0))){
+  while(cur -> next && (!(strcmp(cur -> name, name) == 0) || !(strcmp(cur -> artist, artist) == 0))){
     prev = cur;
     cur = cur -> next;
   }
@@ -90,7 +90,9 @@ struct node* del(struct node* cur, char name[], char artist[]){
     free(cur);
     return first;
   }
-  return cur -> next;
+  first = cur -> next;
+  free(cur);
+  return first;
 }
 
 #endif
