@@ -45,5 +45,12 @@ int main(){
   find_artist_lib(lib, artist);
   printf("\nshuffle:\n");
   shuffle(lib);
+  shuffle(lib);
+  shuffle(lib);
+  printf("\ndelete(Here, Allesia Claire):\n");
+  strcpy(name,"Here");
+  strcpy(artist,"Allesia Claire");
+  del_lib(lib, name, artist);
+  print_library(lib);
   return 0;
 }
