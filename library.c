@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "library.h"
 #include "linkedlist.c"
 
@@ -45,4 +46,22 @@ void find_song_lib(struct library* lib, char name[], char artist[]){
 
 void find_artist_lib(struct library* lib, char artist[]){
   print_artist(lib -> table[indexof(artist)], artist);
+}
+
+void shuffle(struct library* lib){
+  struct node* cur = lib -> table[rand() % 27];
+  while(!(cur -> next)){
+    cur = lib -> table[rand() % 27];
+  }
+  struct node* cpy = cur;
+  int i = 0;
+  while(cur -> next){
+    i++;
+    cur = cur -> next;
+  }
+  int j = rand() % i;
+  for(i = 0; i < j; i++){
+    cpy = cpy -> next;
+  }
+  print_node(cpy);
 }

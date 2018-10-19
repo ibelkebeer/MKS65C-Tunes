@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "library.c"
 #include "linkedlist.c"
 
 int main(){
+  unsigned long seed_time = time(NULL);
+  srand(seed_time);
   struct library* lib = calloc(1, sizeof(struct library));
   free(lib);
   int i;
@@ -41,6 +44,6 @@ int main(){
   strcpy(artist, "Clean Bandit");
   find_artist_lib(lib, artist);
   printf("\nshuffle:\n");
-  
+  shuffle(lib);
   return 0;
 }
